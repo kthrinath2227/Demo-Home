@@ -1,0 +1,113 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background: 255 100% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --card: 255 100% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --popover: 255 100% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --primary: 142.1 76.2% 36.3%;
+  --primary-foreground: 355.7 100% 97.3%;
+  --secondary: 60 4.8% 95.9%;
+  --secondary-foreground: 24 9.8% 10%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --accent: 40 80% 90%;
+  --accent-foreground: 24 9.8% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --ring: 142.1 76.2% 36.3%;
+  --radius: 0.5rem;
+}
+
+html, body {
+   font-family: 'Inter', sans-serif;
+  @apply bg-stone-50 text-stone-800;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;  /* Hide horizontal scroll */
+  margin: 0;
+  padding: 0;
+}
+
+/* Keep vertical scrollbar visible + styled */
+::-webkit-scrollbar {
+  width: 8px;   /* vertical scrollbar */
+  height: 0px;  /* horizontal hidden */
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f8f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #289368, #289368);;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #E91F28, #E91F28);
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+
+.gradient-text {
+  background: linear-gradient(135deg, #2d5a2d 0%, #588157 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* .hero-gradient {
+  background: linear-gradient(135deg, rgba(45, 90, 45, 0.8) 0%, rgba(88, 129, 87, 0.8) 100%);
+} */
+
+.section-gradient {
+  background: linear-gradient(135deg, #a3b18a 0%, #588157 100%);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot-gradient {
+  background: linear-gradient(135deg, #2d5a2d 0%, #588157 100%);
+}
+
+.search-glow {
+  box-shadow: 0 0 20px rgba(88, 129, 87, 0.3);
+}
+
+.floating-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
