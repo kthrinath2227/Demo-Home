@@ -46,7 +46,7 @@ function App() {
         <MarbleArt />
         <WoodenArt />
         <OurProjects />
-        <BlogSection />
+        {/* <BlogSection /> */}
         <ContactUs />
       </main>
       

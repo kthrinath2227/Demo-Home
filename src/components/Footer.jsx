@@ -45,9 +45,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: Youtube, href: "#", label: "YouTube" }
   ];
 
@@ -76,12 +74,12 @@ const Footer = () => {
 
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-green-400" />
-                  <span className="text-stone-300">123 Design Street, Gurgaon, Haryana</span>
+               <MapPin className="h-5 w-5 text-green-400" />
+                  <span className="text-stone-300">1st Floor Shivam Building Kondapur Hyderabad , 500084</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-green-400" />
-                  <span className="text-stone-300">+91 98765 43210</span>
+                  <span className="text-stone-300">+91 70934 56461</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-green-400" />
@@ -130,30 +128,6 @@ const Footer = () => {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 pt-8 border-t border-stone-800"
-        >
-          <div className="max-w-md mx-auto text-center">
-            <span className="text-xl font-semibold mb-4 block text-white">Stay Updated</span>
-            <p className="text-stone-300 mb-6">
-              Subscribe to our newsletter for the latest design trends and exclusive offers.
-            </p>
-            <div className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-stone-800 border border-stone-700 rounded-lg focus:ring-2 focus:ring-green-700 focus:border-transparent text-white placeholder-stone-400"
-              />
-              <Button className="bg-green-700 hover:bg-green-800 text-white px-6">
-                Subscribe
-              </Button>
-            </div>
-          </div>
-        </motion.div>
       </div>
 
       <div className="border-t border-stone-800">

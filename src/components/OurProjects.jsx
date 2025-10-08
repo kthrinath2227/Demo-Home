@@ -1,204 +1,132 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Calendar, Users, ExternalLink } from 'lucide-react';
+import { MapPin, Calendar, Users, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { toast } from '@/components/ui/use-toast';
 
 const OurProjects = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
-
-  const filters = ['all', 'residential', 'commercial', 'luxury', 'traditional'];
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
     {
       id: 1,
-      title: "Luxury Villa Interior",
+      title: "Creeper Wall Art",
       category: "luxury",
-      location: "Gurgaon, Delhi NCR",
+      location: "USA",
       completedDate: "March 2024",
       clientType: "Private Residence",
-      description: "Complete interior transformation with custom doors, wall arts, and pooja room design",
-      image: "Luxury villa interior with custom wooden doors and elegant wall decorations",
-      features: ["Custom Doors", "Wall Arts", "Pooja Room", "Railings"]
+      image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759903618/WhatsApp_Image_2025-10-07_at_20.34.31_d28527de_ij1nns.jpg",
+      features: ["Wall Arts"]
     },
     {
       id: 2,
-      title: "Modern Office Complex",
-      category: "commercial",
+      title: "Tree Concept",
+      category: "traditional",
       location: "Bangalore, Karnataka",
       completedDate: "January 2024",
       clientType: "Corporate Office",
-      description: "Contemporary office design with modern door solutions and artistic wall installations",
-      image: "Modern office complex with glass doors and contemporary wall art installations",
-      features: ["Glass Doors", "Modern Railings", "Wall Installations"]
+      image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759903619/WhatsApp_Image_2025-10-07_at_20.34.31_c9b219e7_tlqznr.jpg",
+      features: ["Glass Doors", "Modern Railings"]
     },
     {
       id: 3,
-      title: "Traditional Heritage Home",
+      title: "Art Of Love",
       category: "traditional",
-      location: "Jaipur, Rajasthan",
+      location: "Hyderabad",
       completedDate: "February 2024",
-      clientType: "Heritage Property",
-      description: "Restoration and enhancement of traditional home with authentic designs",
-      image: "Traditional heritage home with carved wooden doors and classical architecture",
-      features: ["Heritage Doors", "Traditional Carvings", "Antique Hardware"]
+      clientType: "Villa",
+      image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759903613/5_gfczel.jpg",
+      features: ["Heritage Doors", "Carvings"]
     },
     {
       id: 4,
-      title: "Contemporary Apartment",
+      title: "Mirror Wall Art",
       category: "residential",
       location: "Mumbai, Maharashtra",
       completedDate: "April 2024",
       clientType: "Apartment Complex",
-      description: "Modern apartment interiors with sleek door designs and minimalist aesthetics",
-      image: "Contemporary apartment with minimalist door designs and modern interiors",
-      features: ["Minimalist Doors", "Modern Hardware", "Clean Lines"]
+      image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759903609/WhatsApp_Image_2025-10-07_at_20.36.27_154885ec_cnmqxh.jpg",
+      features: ["Minimalist Doors"]
     },
     {
       id: 5,
-      title: "Boutique Hotel Design",
+      title: "Tree Concept",
       category: "commercial",
-      location: "Goa",
+      location: "Vijayawada",
       completedDate: "December 2023",
+
       clientType: "Hospitality",
-      description: "Unique hotel interior with custom artistic elements and luxury finishes",
-      image: "Boutique hotel with artistic door designs and luxury interior elements",
-      features: ["Artistic Doors", "Luxury Finishes", "Custom Hardware"]
+      image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759903609/WhatsApp_Image_2025-10-07_at_20.36.26_3a845eef_eqbl73.jpg",
+      features: ["Artistic Doors"]
     },
     {
-      id: 6,
-      title: "Penthouse Transformation",
-      category: "luxury",
-      location: "Pune, Maharashtra",
-      completedDate: "May 2024",
-      clientType: "Private Residence",
-      description: "Complete penthouse makeover with premium materials and bespoke designs",
-      image: "Luxury penthouse with premium door designs and sophisticated interiors",
-      features: ["Premium Materials", "Bespoke Designs", "Smart Integration"]
+       id: 5,
+      title: "Photo frame Concept",
+      category: "commercial",
+      location: "Hyderabad",
+      completedDate: "December 2023",
+      clientType: "Hospitality",
+      image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759903606/WhatsApp_Image_2025-10-07_at_20.36.32_72f90917_kslcvk.jpg",
+      features: ["Artistic Doors"]
+
     }
   ];
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
-
-  const handleViewProject = (projectTitle) => {
-    toast({
-      title: "Project Details",
-      description: `🚧 This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀`,
-    });
-  };
-
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <section id="projects" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
             Our Projects
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore our portfolio of successful projects across residential and commercial spaces
+          <p className="text-lg text-gray-600 max-w-xl mx-auto">
+            A glimpse of our recent works across India.
           </p>
         </motion.div>
 
-        {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {filters.map((filter) => (
-            <Button
-              key={filter}
-              variant={activeFilter === filter ? "default" : "outline"}
-              onClick={() => setActiveFilter(filter)}
-              className="capitalize px-6 py-2"
-            >
-              {filter}
-            </Button>
-          ))}
-        </div>
-
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover group"
+              className="bg-white rounded-2xl shadow-md overflow-hidden group relative"
             >
               <div className="relative overflow-hidden">
-                <img 
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                <img
+                  src={project.image}
                   alt={project.title}
-                 src="https://images.unsplash.com/photo-1572177812156-58036aae439c" />
-                
-                <div className="absolute top-4 left-4">
-                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                    project.category === 'luxury' ? 'bg-gold-500 text-white' :
-                    project.category === 'commercial' ? 'bg-blue-500 text-white' :
-                    project.category === 'residential' ? 'bg-green-500 text-white' :
-                    'bg-purple-500 text-white'
-                  }`}>
-                    {project.category}
-                  </span>
-                </div>
-
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                  <Button
-                    className="opacity-0 group-hover:opacity-100 transition-opacity"
-                    onClick={() => handleViewProject(project.title)}
-                  >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    View Project
-                  </Button>
-                </div>
+                  className="w-full h-64 md:h-72 object-cover transition-all duration-500"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-gray-800">
+              <div className="p-4 md:p-5">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">
                   {project.title}
                 </h3>
-
-                <p className="text-gray-600 mb-4 text-sm">
-                  {project.description}
-                </p>
-
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-sm text-gray-600">
-                    <MapPin className="h-4 w-4 mr-2 text-purple-600" />
-                    {project.location}
+                <div className="space-y-1 text-sm text-gray-600">
+                  <div className="flex items-center">
+                    <MapPin className="h-4 w-4 mr-2 text-purple-600" /> {project.location}
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <Calendar className="h-4 w-4 mr-2 text-purple-600" />
-                    {project.completedDate}
+                  <div className="flex items-center">
+                    <Calendar className="h-4 w-4 mr-2 text-purple-600" /> {project.completedDate}
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <Users className="h-4 w-4 mr-2 text-purple-600" />
-                    {project.clientType}
-                  </div>
-                </div>
-
-                <div className="mb-4">
-                  <div className="flex flex-wrap gap-1">
-                    {project.features.map((feature, index) => (
-                      <span
-                        key={index}
-                        className="text-xs bg-purple-100 text-purple-600 px-2 py-1 rounded-full"
-                      >
-                        {feature}
-                      </span>
-                    ))}
+                  <div className="flex items-center">
+                    <Users className="h-4 w-4 mr-2 text-purple-600" /> {project.clientType}
                   </div>
                 </div>
 
                 <Button
-                  className="w-full bg-purple-600 hover:bg-purple-700"
-                  onClick={() => handleViewProject(project.title)}
+                  className="w-full mt-4 bg-green-600 hover:bg-purple-700"
+                  onClick={() => setSelectedProject(project)}
                 >
                   View Details
                 </Button>
@@ -207,28 +135,32 @@ const OurProjects = () => {
           ))}
         </div>
 
-        {filteredProjects.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">No projects found in this category.</p>
+        {/* Modal */}
+        {selectedProject && (
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 px-4">
+            <div className="relative bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[85vh] overflow-hidden">
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-3 right-3 bg-gray-100 hover:bg-gray-200 rounded-full p-2"
+              >
+                <X className="h-5 w-5 text-gray-700" />
+              </button>
+
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                className="w-full h-auto max-h-[65vh] object-contain"
+              />
+              <div className="p-5 text-center">
+                <h3 className="text-xl font-semibold text-gray-800 mb-1">
+                  {selectedProject.title}
+                </h3>
+                <p className="text-gray-600 text-sm">{selectedProject.location}</p>
+              </div>
+            </div>
           </div>
         )}
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-16"
-        >
-          <div className="bg-purple-600 text-white rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Ready to Start Your Project?</h3>
-            <p className="text-lg mb-6">
-              Let's discuss your vision and create something extraordinary together. Our team is ready to bring your ideas to life.
-            </p>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600">
-              Start Your Project
-            </Button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

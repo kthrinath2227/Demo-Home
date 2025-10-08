@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Grid, List, Upload } from "lucide-react";
+import { Grid, List } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
 
@@ -8,7 +8,8 @@ const WallArts = () => {
   const [viewMode, setViewMode] = useState("grid");
   const [activeFilter, setActiveFilter] = useState("all");
   const [showAll, setShowAll] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false); // Custom request modal
+  const [viewImage, setViewImage] = useState(null); // View details modal
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -192,6 +193,7 @@ ${formData.preview ? `I've uploaded an image for reference: ${formData.preview}`
                 <Button
                   size="sm"
                   className="bg-green-700 hover:bg-green-800 text-white mt-auto"
+                  onClick={() => setViewImage(art.image)}
                 >
                   View Details
                 </Button>
@@ -231,24 +233,21 @@ ${formData.preview ? `I've uploaded an image for reference: ${formData.preview}`
       >
         <div className="bg-gradient-to-r from-green-700 to-green-500 text-white rounded-2xl p-8 max-w-4xl mx-auto shadow-lg">
           <h3 className="text-2xl font-bold mb-4">Custom Wall Arts Solutions</h3>
-        <p className="text-lg mb-6 leading-relaxed text-emerald-50">
-  Need a 
-  <span className="font-bold bg-gradient-to-r from-yellow-300 via-amber-200 to-lime-200 text-transparent bg-clip-text">
-    {" "}custom wall art design
-  </span>
-  ? <br />
-  Our expert craftsmen create 
-  <span className="font-semibold text-emerald-100"> bespoke wall art</span> 
-  tailored to your unique style and space. <br /><br />
-  Simply 
-  <span className="font-medium text-white"> upload your wall images</span> 
-  or 
-  <span className="font-medium text-white"> share your ideas</span>, <br />
-  and we’ll bring them to life with precision, creativity, and quality.
-</p>
-
-
-
+          <p className="text-lg mb-6 leading-relaxed text-emerald-50">
+            Need a 
+            <span className="font-bold bg-gradient-to-r from-yellow-300 via-amber-200 to-lime-200 text-transparent bg-clip-text">
+              {" "}custom wall art design
+            </span>
+            ? <br />
+            Our expert craftsmen create 
+            <span className="font-semibold text-emerald-100"> bespoke wall art</span> 
+            tailored to your unique style and space. <br /><br />
+            Simply 
+            <span className="font-medium text-white"> upload your wall images</span> 
+            or 
+            <span className="font-medium text-white"> share your ideas</span>, <br />
+            and we’ll bring them to life with precision, creativity, and quality.
+          </p>
           <Button
             size="lg"
             variant="outline"
@@ -260,7 +259,7 @@ ${formData.preview ? `I've uploaded an image for reference: ${formData.preview}`
         </div>
       </motion.div>
 
-      {/* ✅ Modal Popup */}
+      {/* ✅ Custom Request Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 p-4">
           <motion.div
@@ -323,6 +322,31 @@ ${formData.preview ? `I've uploaded an image for reference: ${formData.preview}`
           </motion.div>
         </div>
       )}
+
+      {/* ✅ View Details Modal */}
+{/* ✅ View Details Modal */}
+{viewImage && (
+  <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 p-4 overflow-auto">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      className="bg-white rounded-2xl shadow-2xl max-w-xl w-full relative p-4 mx-auto"
+    >
+      <button
+        onClick={() => setViewImage(null)}
+        className="absolute top-3 right-3 text-gray-500 hover:text-red-600 text-xl z-50"
+      >
+        ×
+      </button>
+      <img
+        src={viewImage}
+        alt="Wall Art"
+        className="w-full h-auto max-h-[80vh] rounded-xl object-contain"
+      />
+    </motion.div>
+  </div>
+)}
+
     </section>
   );
 };

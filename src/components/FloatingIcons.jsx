@@ -9,14 +9,14 @@ const FloatingIcons = () => {
     {
       name: 'WhatsApp',
       icon: MessageSquare,
-      href: 'https://wa.me/919876543210',
+      href: 'https://wa.me/+917093456461',
       color: 'bg-green-500',
       tooltip: 'Chat with us on WhatsApp 💬',
     },
     {
       name: 'Instagram',
       icon: Instagram,
-      href: 'https://instagram.com',
+      href: 'https://www.instagram.com/homeshowcasehyd?igsh=MThnb2oxeG9xZzhhdw==',
       color: 'bg-gradient-to-br from-yellow-400 via-red-500 to-purple-600',
       tooltip: 'See our Reels & posts on Instagram 📸',
     },

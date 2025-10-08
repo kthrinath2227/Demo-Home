@@ -23,43 +23,55 @@ const ContactUs = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    toast({
-      title: "Message Sent! 📧",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
-    });
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
-  };
+  e.preventDefault();
+  const message = `
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Phone:* ${formData.phone}
+*Subject:* ${formData.subject}
+*Message:* ${formData.message}
+  `;
+
+
+  const encodedMessage = encodeURIComponent(message);
+
+  const whatsappNumber = "917093456461"; 
+
+  window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
+
+
+  setFormData({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+};
 
   const contactInfo = [
     {
       icon: MapPin,
       title: "Visit Our Showroom",
-      details: ["123 Design Street, Sector 15", "Gurgaon, Haryana 122001", "India"],
+      details: [ "branch, Kondapur 1st Floor", "Shivam Building Sriram Nagar 1st floor of Union bank kothaguda", "near Botanical Garden Rd, Kondapur, Telangana 500084"],
       color: "text-blue-600"
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+91 98765 43210", "+91 11 4567 8900", "Mon-Sat: 9AM-7PM"],
+      details: ["+91 70934 56461", "+91 98850 63446",],
       color: "text-green-600"
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@homesowcase.com", "sales@homesowcase.com", "support@homesowcase.com"],
+      details: ["info@homesowcase.com","support@homesowcase.com"],
       color: "text-purple-600"
     },
     {
       icon: Clock,
       title: "Business Hours",
-      details: ["Monday - Friday: 9AM - 7PM", "Saturday: 10AM - 6PM", "Sunday: Closed"],
+      details: ["Monday - Saturday: 10AM - 9PM", "Sunday: 10AM - 8.30PM"],
       color: "text-orange-600"
     }
   ];
@@ -190,6 +202,32 @@ const ContactUs = () => {
                 Send Message
               </Button>
             </form>
+             <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden mt-5"
+            >
+              <div className="p-6 border-b border-stone-200">
+                <h4 className="text-lg font-semibold text-stone-800">Find Us Here / BZA Branch</h4>
+                <p className="text-stone-600 text-sm">Visit our showroom to see our products in person</p>
+              </div>
+              
+              <div className="h-50 bg-stone-200 relative">
+  <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.747774544375!2d80.59619227419002!3d16.538826426697288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35ef2c195edd4d%3A0xee7ca7b7e4395a30!2sHOME%20SHOW%20CASE%20BHAVANIPURAM!5e0!3m2!1sen!2sin!4v1759922442583!5m2!1sen!2sin" 
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title="HomeShowcase Showroom Location"
+  />
+  <div className="absolute inset-0 bg-green-700 bg-opacity-10 pointer-events-none"></div>
+</div>
+
+            </motion.div>
           </motion.div>
 
           <motion.div
@@ -231,48 +269,27 @@ const ContactUs = () => {
               className="bg-white rounded-2xl shadow-lg overflow-hidden"
             >
               <div className="p-6 border-b border-stone-200">
-                <h4 className="text-lg font-semibold text-stone-800">Find Us Here</h4>
+                <h4 className="text-lg font-semibold text-stone-800">Find Us Here / HYD Branch</h4>
                 <p className="text-stone-600 text-sm">Visit our showroom to see our products in person</p>
               </div>
               
               <div className="h-64 bg-stone-200 relative">
-                <iframe
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=77.0266%2C28.4595%2C77.0866%2C28.5195&layer=mapnik&marker=28.4895%2C77.0566"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="HomeSowCase Showroom Location"
-                />
-                <div className="absolute inset-0 bg-green-700 bg-opacity-10 pointer-events-none"></div>
-              </div>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.994923009079!2d78.35213457421123!3d17.45995710071237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93dd06cda891%3A0x3803627406eeccb7!2sHomeshowcase!5e0!3m2!1sen!2sin!4v1759922123246!5m2!1sen!2sin"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title="HomeShowcase Showroom Location"
+  />
+  <div className="absolute inset-0 bg-green-700 bg-opacity-10 pointer-events-none"></div>
+</div>
+
             </motion.div>
           </motion.div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-green-700 to-green-500 text-white rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Ready to Start Your Dream Project?</h3>
-            <p className="text-lg mb-6">
-              Schedule a free consultation with our design experts and get a personalized quote for your project.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-700">
-                Schedule Consultation
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-700">
-                Get Free Quote
-              </Button>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
