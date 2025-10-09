@@ -102,71 +102,7 @@ const BlogSection = () => {
           </p>
         </motion.div>
 
-        {featuredPost && (
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-16"
-          >
-            <div className="bg-gradient-to-r from-green-700 to-green-500 rounded-3xl overflow-hidden shadow-2xl">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                <div className="relative overflow-hidden">
-                  <img
-                    className="w-full h-64 lg:h-full object-cover"
-                    alt={featuredPost.title}
-                   src="https://images.unsplash.com/photo-1686643184179-e4b65e15022e" />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold">
-                      Featured
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="p-8 lg:p-12 text-white flex flex-col justify-center">
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="bg-white/20 text-white px-3 py-1 rounded-full text-sm">
-                      {featuredPost.category}
-                    </span>
-                    <div className="flex items-center text-sm text-white/80">
-                      <Clock className="h-4 w-4 mr-1" />
-                      {featuredPost.readTime}
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-2xl lg:text-3xl font-bold mb-4 leading-tight">
-                    {featuredPost.title}
-                  </h3>
-                  
-                  <p className="text-lg text-white/90 mb-6">
-                    {featuredPost.excerpt}
-                  </p>
-                  
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center text-sm text-white/80">
-                      <User className="h-4 w-4 mr-2" />
-                      {featuredPost.author}
-                    </div>
-                    <div className="flex items-center text-sm text-white/80">
-                      <Calendar className="h-4 w-4 mr-2" />
-                      {featuredPost.date}
-                    </div>
-                  </div>
-                  
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="border-white text-white hover:bg-white hover:text-green-700 self-start"
-                    onClick={() => handleReadMore(featuredPost.title)}
-                  >
-                    Read Full Article
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
+        
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {regularPosts.map((post, index) => (

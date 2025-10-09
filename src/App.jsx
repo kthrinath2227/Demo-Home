@@ -19,6 +19,8 @@ import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot';
 import SearchModal from '@/components/SearchModal';
 import FloatingIcons from '@/components/FloatingIcons';
+import Testimonials from '@/components/Testimonials';
+import ThanjavurPainting from '@/components/ThanjavurPainting';
 import { Toaster } from '@/components/ui/toaster';
 
 function App() {
@@ -41,13 +43,16 @@ function App() {
         <WallArts />
         <DoorDesigns />
         <PoojaRoomDesigns />
+        <ThanjavurPainting />
         <DoorHandles />
         <RailingSection />
         <MarbleArt />
         <WoodenArt />
         <OurProjects />
-        {/* <BlogSection /> */}
-        <ContactUs />
+        <Testimonials />
+         <ContactUs />
+        <BlogSection />
+       
       </main>
       
       <Footer />

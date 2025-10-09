@@ -14,15 +14,15 @@ const HeroSection = () => {
       subtitle:
         "Discover our exclusive collection of doors, wall arts, and interior solutions",
       image:
-        "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759660034/krishna_new_site_tg0jwy.jpg",
+        "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759727075/1_uum68j.jpg",
     },
     {
       id: 2,
-      title: "Exquisite Door Designs for Every Style",
+      title: "Exquisite Wall Art Designs for Every Style",
       subtitle:
         "From traditional to contemporary, find the perfect door for your space",
       image:
-        "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759670431/Site_pic_jzlkjn.jpg",
+        "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759727093/wall_art_8_jdizrj.jpg",
     },
     {
       id: 3,

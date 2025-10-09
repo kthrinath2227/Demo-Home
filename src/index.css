@@ -38,24 +38,7 @@ html, body {
   padding: 0;
 }
 
-/* Keep vertical scrollbar visible + styled */
-::-webkit-scrollbar {
-  width: 8px;   /* vertical scrollbar */
-  height: 0px;  /* horizontal hidden */
-}
 
-::-webkit-scrollbar-track {
-  background: #f8f8f8;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #289368, #289368);;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #E91F28, #E91F28);
-}
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;

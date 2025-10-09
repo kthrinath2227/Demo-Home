@@ -8,8 +8,8 @@ const WallArts = () => {
   const [viewMode, setViewMode] = useState("grid");
   const [activeFilter, setActiveFilter] = useState("all");
   const [showAll, setShowAll] = useState(false);
-  const [showModal, setShowModal] = useState(false); // Custom request modal
-  const [viewImage, setViewImage] = useState(null); // View details modal
+  const [showModal, setShowModal] = useState(false);
+  const [viewImage, setViewImage] = useState(null); 
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -53,7 +53,7 @@ const WallArts = () => {
       ? wallArts
       : wallArts.filter((art) => art.category === activeFilter);
 
-  const displayedArts = showAll ? filteredArts : filteredArts.slice(0, 6);
+  const displayedArts = showAll ? filteredArts : filteredArts.slice(0, 3);
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
@@ -157,22 +157,24 @@ ${formData.preview ? `I've uploaded an image for reference: ${formData.preview}`
               }`}
             >
               <div
-                className={`relative overflow-hidden ${
-                  viewMode === "list" ? "w-1/2" : "w-full"
-                }`}
-              >
-                <motion.img
-                  src={art.image}
-                  alt={art.name}
-                  className="object-cover w-full h-80 transition-transform duration-[2000ms] ease-out group-hover:scale-105"
-                  initial={{ scale: 1 }}
-                  whileInView={{
-                    scale: 1.01,
-                    transition: { type: "spring", stiffness: 40 },
-                  }}
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all duration-500"></div>
-              </div>
+  className={`relative overflow-hidden rounded-2xl ${
+    viewMode === "list" ? "w-1/2" : "w-full"
+  }`}
+>
+  <motion.div
+    className="relative"
+    whileHover={{ scale: 1.1 }}
+    transition={{ duration: 0.6, ease: "easeInOut" }}
+  >
+    <img
+      src={art.image}
+      alt={art.name}
+      className="object-cover w-full h-80"
+    />
+    <div className="absolute inset-0 bg-black/30 opacity-100 hover:opacity-0 transition-opacity duration-500" />
+  </motion.div>
+</div>
+
 
               <div
                 className={`p-5 ${
@@ -203,7 +205,7 @@ ${formData.preview ? `I've uploaded an image for reference: ${formData.preview}`
         </div>
 
         {/* View All / Show Less */}
-        {filteredArts.length > 6 && (
+        {filteredArts.length > 3 && (
           <div className="text-center mt-12">
             <Button
               onClick={() => setShowAll(!showAll)}
@@ -334,7 +336,7 @@ ${formData.preview ? `I've uploaded an image for reference: ${formData.preview}`
     >
       <button
         onClick={() => setViewImage(null)}
-        className="absolute top-3 right-3 text-gray-500 hover:text-red-600 text-xl z-50"
+        className="absolute top-2 right-1 text-gray-500 hover:text-red-600 text-xl z-50"
       >
         ×
       </button>
