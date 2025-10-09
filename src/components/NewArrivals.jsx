@@ -19,7 +19,7 @@ const NewArrivals = () => {
       id: 2,
       name: "Modern Wall Art Set",
       rating: 4.9,
-      image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759660034/krishna_new_site_tg0jwy.jpg",
+      image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759727092/Wall_Art_7_qkws0l.jpg",
       badge: "Trending",
     },
     {

@@ -30,7 +30,7 @@ const WallArts = () => {
     { id: 9, name: "Fiber Art", category: "abstract", size: "30x20 inches", image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759727089/Wall_Art_3_khtrja.jpg" },
     { id: 10, name: "Radha Krishna", category: "traditional", size: "24x24 inches", image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759727087/Wall_Art_2_foczxq.jpg" },
     { id: 11, name: "Krishna with Flute", category: "traditional", size: "30x30 inches", image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759727088/Wall_Art_2dem_egubsw.jpg" },
-    { id: 12, name: "Krishna with Nature", category: "traditional", size: "36x24 inches", image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759727083/krishna_new_site_tpy612.jpg" },
+    { id: 12, name: "Krishna with Nature", category: "traditional", size: "36x24 inches", image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759727092/Wall_Art_7_qkws0l.jpg" },
     { id: 13, name: "Pin Art", category: "traditional", size: "40x30 inches", image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759727077/5_aav2ed.jpg" },
     { id: 14, name: "Mahabharatam Concept", category: "traditional", size: "24x36 inches", image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759727081/krishna_arjuna_1_jg7g0q.jpg" },
     { id: 15, name: "Lord Balaji Wall Art", category: "traditional", size: "30x20 inches", image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759727080/Ganesh_art_xxmxsa.jpg" },
