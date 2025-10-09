@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from '@/components/ui/use-toast';
-
+import { Facebook, Instagram, Youtube, MessageCircle } from "lucide-react";
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -262,20 +262,20 @@ const ContactUs = () => {
               ))}
             </div>
 
-            <motion.div
+          <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden mt-5"
             >
               <div className="p-6 border-b border-stone-200">
                 <h4 className="text-lg font-semibold text-stone-800">Find Us Here / HYD Branch</h4>
                 <p className="text-stone-600 text-sm">Visit our showroom to see our products in person</p>
               </div>
               
-              <div className="h-64 bg-stone-200 relative">
+              <div className="h-50 bg-stone-200 relative">
   <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.994923009079!2d78.35213457421123!3d17.45995710071237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93dd06cda891%3A0x3803627406eeccb7!2sHomeshowcase!5e0!3m2!1sen!2sin!4v1759922123246!5m2!1sen!2sin"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.994923009079!2d78.35213457421123!3d17.45995710071237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93dd06cda891%3A0x3803627406eeccb7!2sHomeshowcase!5e0!3m2!1sen!2sin!4v1760018888438!5m2!1sen!2sin"
     width="100%"
     height="100%"
     style={{ border: 0 }}
@@ -288,6 +288,43 @@ const ContactUs = () => {
 </div>
 
             </motion.div>
+             <div className="absolute bottom-5 left-5 flex space-x-4 z-20">
+    <a
+      href="https://www.instagram.com/yourpage"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-white/80 p-2 rounded-full hover:bg-green-700 hover:text-white transition"
+    >
+      <Instagram className="w-5 h-5" />
+    </a>
+
+    <a
+      href="https://wa.me/919876543210"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-white/80 p-2 rounded-full hover:bg-green-700 hover:text-white transition"
+    >
+      <MessageCircle className="w-5 h-5" />
+    </a>
+
+    <a
+      href="https://www.facebook.com/yourpage"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-white/80 p-2 rounded-full hover:bg-green-700 hover:text-white transition"
+    >
+      <Facebook className="w-5 h-5" />
+    </a>
+
+    <a
+      href="https://www.youtube.com/@yourchannel"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-white/80 p-2 rounded-full hover:bg-green-700 hover:text-white transition"
+    >
+      <Youtube className="w-5 h-5" />
+    </a>
+  </div>
           </motion.div>
         </div>
       </div>

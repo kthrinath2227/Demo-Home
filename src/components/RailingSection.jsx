@@ -20,7 +20,6 @@ const RailingSection = () => {
     { id: 'staircase', name: 'Staircase Railings' },
     { id: 'balcony', name: 'Balcony Railings' },
     { id: 'terrace', name: 'Terrace Railings' },
-    { id: 'garden', name: 'Garden Railings' }
   ];
 
   const railings = {
@@ -105,26 +104,7 @@ const RailingSection = () => {
         image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759846144/WhatsApp_Image_2019-07-30_at_11.30.59_zjbwct.jpg"
       }
     ],
-    garden: [
-      {
-        id: 10,
-        name: "Decorative Garden Fence",
-        material: "Aluminum",
-        image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759847034/download_3_jq4mzh.jpg"
-      },
-      {
-        id: 11,
-        name: "Picket Fence Railing",
-        material: "Wood",
-        image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759847024/download_4_o3co8q.jpg"
-      },
-      {
-        id: 12,
-        name: "Modern Panel Fencing",
-        material: "Composite",
-        image: "https://res.cloudinary.com/dzwxkhkvi/image/upload/v1759847022/Hot_selling_most_modern_house_railing_design_securityretro_luxury_outdoor_balcony_aluminum_alloy_k7id3d.jpg"
-      }
-    ]
+    
   };
 
   const features = [
