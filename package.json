@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://kthrinath2227.github.io/Demo-Home",
+  "homepage": "https://homeshowcase.co.in",
   "scripts": {
     "dev": "vite --host :: --port 3000",
     "build": "vite build",
